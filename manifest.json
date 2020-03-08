@@ -10,7 +10,7 @@
     "permissions": [
         "storage",
         "cookies",
-        "https://medium.com/",
+        "https://medium.com/*",
         "tabs"
     ]
   }

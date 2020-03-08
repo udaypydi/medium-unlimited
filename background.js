@@ -1,12 +1,9 @@
-chrome.tabs.onUpdated.addListener(function(id, info, tab){
-
-    // decide if we're ready to inject content script
-    if (tab.status !== "complete"){
-        console.log("not yet");
-        return;
+chrome.tabs.onUpdated.addListener( function (tabId, changeInfo, tab) {
+    if (changeInfo.status == 'complete') {
+        chrome.cookies.getAll({domain: "medium.com"}, function(cookies) {
+            for(var i=0; i<cookies.length;i++) {
+                chrome.cookies.remove({url: "https://medium.com/" + cookies[i].path, name: cookies[i].name});
+            }
+        });
     }
-    
-    chrome.cookies.getAll({domain: "https://medium.com/"}, function(cookies) {
-        console.log(cookies);
-    });    
-});
+  })
