@@ -8,6 +8,9 @@
         "persistent": false
     },
     "permissions": [
-        "storage"
+        "storage",
+        "cookies",
+        "https://medium.com/",
+        "tabs"
     ]
   }

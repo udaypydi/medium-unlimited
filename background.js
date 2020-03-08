@@ -1,9 +1,12 @@
-chrome.runtime.onInstalled.addListener(function() {
-    chrome.storage.local.get(['post-article|posts-viewed-count'], function(items) {
-        if (items > 3) {
-            chrome.storage.local.set({'post-article|posts-viewed-count': 0}, function() {
-                console.log('Value is set to ' + 0);
-            });
-        }
-    });
+chrome.tabs.onUpdated.addListener(function(id, info, tab){
+
+    // decide if we're ready to inject content script
+    if (tab.status !== "complete"){
+        console.log("not yet");
+        return;
+    }
+    
+    chrome.cookies.getAll({domain: "https://medium.com/"}, function(cookies) {
+        console.log(cookies);
+    });    
 });
