@@ -1,3 +1,5 @@
+// called when the status of the chrome tab is updated.
+
 chrome.tabs.onUpdated.addListener( function (tabId, changeInfo, tab) {
     if (changeInfo.status == 'complete') {
         chrome.cookies.getAll({domain: "medium.com"}, function(cookies) {
