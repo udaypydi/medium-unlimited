@@ -10,3 +10,6 @@ Medium unlimited is a chrom extension that allows user to read unlimited article
 4. Click on `Load Unpacked`.
 5. Select the directory in which the plugin is placed.
 6. Enjoy unlimited aticles.
+
+# Contribute
+Raise a PR to `master` with `feat` and `fix` branch names.
