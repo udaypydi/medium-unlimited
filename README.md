@@ -1,6 +1,6 @@
 # Medium Unlimited
 
-Medium unlimited is a chrome extension that allows user to read unlimited articles on medium without a subscription.
+Medium unlimited is a chrome extension that allows user to read unlimited articles on medium without a subscription. It clears cookies on load which in turn clears the user data.
 
 # Testing Locally
 
