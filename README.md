@@ -12,4 +12,4 @@ Medium unlimited is a chrome extension that allows user to read unlimited articl
 6. Enjoy unlimited aticles.
 
 # Contribute
-Raise a PR to `master` with `feat` and `fix` branch names. Standard githu contribution has to be followed for all the PRs.
+Raise a PR to `master` with `feat` and `fix` branch names. Standard github contribution has to be followed for all the PRs.
