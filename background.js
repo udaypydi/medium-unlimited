@@ -1,10 +1,8 @@
-chrome.tabs.onUpdated.addListener( function (tabId, changeInfo, tab) {
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     
-    if (changeInfo.status == 'complete') {
-        
-        chrome.cookies.getAll({domain: "medium.com"}, function(cookies) {
-            for(var i=0; i<cookies.length;i++) {
-                
+    if (changeInfo.status === 'complete') {
+        chrome.cookies.getAll({domain: "medium.com"}, (cookies) => {
+            for(let i = 0; i < cookies.length; i++) {
                 chrome.cookies.remove({url: "https://medium.com/" + cookies[i].path, name: cookies[i].name});
             }
         });
