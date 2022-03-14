@@ -1,16 +1,11 @@
 {
-    "name": "medium-unlimited",
-    "version": "1.0",
-    "description": "Access unlimited articles on medium",
-    "manifest_version": 2,
-    "background": {
-        "scripts": ["background.js"],
-        "persistent": false
-    },
-    "permissions": [
-        "storage",
-        "cookies",
-        "https://medium.com/*",
-        "tabs"
-    ]
-  }
+  "name": "medium-unlimited",
+  "version": "2.0",
+  "description": "Access unlimited articles on medium",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "cookies", "tabs"],
+  "host_permissions": ["https://medium.com/*", "*://*/*"]
+}
