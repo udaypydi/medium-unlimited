@@ -1,18 +1,12 @@
-// called when the status of the chrome tab is updated.
-
-chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
-  // check if the tab is still loading or the loading is complete.
-
-  if (changeInfo.status == "complete") {
-    // read every cookie in medium.com
-
-    chrome.cookies.getAll({ domain: "medium.com" }, function (cookies) {
-      for (var i = 0; i < cookies.length; i++) {
-        // delete every cookie
-
-        chrome.cookies.remove({
-          url: "https://medium.com/" + cookies[i].path,
-          name: cookies[i].name,
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+    
+    // call the hook once the tab is completely loaded.
+    
+    if (changeInfo.status === 'complete') {
+        chrome.cookies.getAll({domain: "medium.com"}, (cookies) => {
+            for(let i = 0; i < cookies.length; i++) {
+                chrome.cookies.remove({url: "https://medium.com/" + cookies[i].path, name: cookies[i].name});
+            }
         });
       }
     });
